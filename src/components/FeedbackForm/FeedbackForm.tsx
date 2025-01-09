@@ -95,13 +95,13 @@ export const FeedbackForm = () => {
         ref={ref}
       >
         <motion.h2
-          className="font-bold text-[48px] text-center"
+          className="font-bold text-[24px] md:text-[48px] text-center px-4"
           variants={fadeInUp}
         >
           Форма зворотнього зв&apos;язку
         </motion.h2>
 
-        <motion.div variants={fadeInUp} className="z-full relative z-[12]">
+        <motion.div variants={fadeInUp} className="z-full relative z-[12] px-4">
           <Form {...methods}>
             <form
               onSubmit={methods.handleSubmit(onSubmit)}
@@ -113,7 +113,8 @@ export const FeedbackForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="pl-1">
-                     Опишіть детально ваще питання/проблему/скаргу/пропозицію та відправте натиснувши на кнопку
+                      Опишіть детально ваще питання/проблему/скаргу/пропозицію
+                      та відправте натиснувши на кнопку
                     </FormLabel>
 
                     <FormControl>
@@ -134,7 +135,7 @@ export const FeedbackForm = () => {
                   type="submit"
                   className="h-[43px] flex items-center justify-center w-[124.6px] mt-2 border py-2 px-3  rounded-2xl transition-all"
                 >
-                  {isLoading ? <Loader /> : "Підтвердити"}
+                  {isLoading ? <Loader /> : "Відправити"}
                 </Button>
               </div>
 
