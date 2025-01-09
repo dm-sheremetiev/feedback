@@ -17,14 +17,6 @@ export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const name = formData.get("text");
 
-  let ip = "";
-
-  try {
-    ip = await (await fetch("https://checkip.amazonaws.com/")).text();
-  } catch {
-    ip = "Помилка";
-  }
-
   try {
     await transporter.sendMail({
       from: "dmytriy.sheremetiev@gmail.com",
@@ -32,7 +24,6 @@ export async function POST(request: NextRequest) {
       subject: `Фідбек від співробітників `,
       html: `
         <p>Фідбек: ${name}</p>
-        <p>IP: ${ip}</p>
         `,
     });
 
